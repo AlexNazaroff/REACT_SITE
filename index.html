@@ -21,22 +21,33 @@
 class App extends React.Component{
         constructor () {
             super();
-            this.state = {name: 'Alex'};
+            this.state = {
+                person: {name: '', city: ''}
+            };
         }
-        changeName() {
-        this.setState ({name: "Bob"});
-}
+        componentDidMount(){
+            this.setState ({
+            person: {name: 'Alexey', city: 'Moscow'}
+            });
+        }
+        componentDidUpdate(){
+
+                console.log('Компонент рабочий', this.state);
+        }
+
+
         render() {
             return (
                 <div>
-                    <h3>Hide {this.state.name}</h3>
-                    <button type='button' onClick = {this.changeName.bind (this)} >Change</button>
-            </div>
-            )
+                    <p>City: {this.state.person.city}</p>
+                    <p>Name: {this.state.person.name}</p>
+                </div>
+            );
         }
     }
     ReactDOM.render(<App />,
     document.getElementById('root'));
+
 
 
 
