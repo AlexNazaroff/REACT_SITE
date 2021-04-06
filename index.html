@@ -20,13 +20,20 @@
 <script type="text/babel">
 class App extends React.Component{
         render() {
-            const element = <h2>Text Selenium!</h2>;
-            return <div>{element}</div>
+            return <Greet greeting='Driver' />;
+
         }
     }
+class Greet extends React.Component{
+        render() {
+            return <h3>{this.props.greeting} Key</h3>
 
+        }
+    }
     ReactDOM.render(<App />,
     document.getElementById('root'))
+
+
 
 
 
