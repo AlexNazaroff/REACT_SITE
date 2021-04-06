@@ -19,19 +19,26 @@
 
 <script type="text/babel">
 class App extends React.Component{
-        render() {
-            return <Greet greeting='Driver' />;
-
+        constructor () {
+            super();
+            this.state = {name: 'Alex'};
         }
-    }
-class Greet extends React.Component{
+        changeName() {
+        this.setState ({name: "Bob"});
+}
         render() {
-            return <h3>{this.props.greeting} Key</h3>
-
+            return (
+                <div>
+                    <h3>Hide {this.state.name}</h3>
+                    <button type='button' onClick = {this.changeName.bind (this)} >Change</button>
+            </div>
+            )
         }
     }
     ReactDOM.render(<App />,
-    document.getElementById('root'))
+    document.getElementById('root'));
+
+
 
 
 
